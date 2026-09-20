@@ -65,6 +65,6 @@ class OllamaClient:
         data = json.loads(content)
 
         if not isinstance(data, dict):
-            raise ValueError("Ollama returned an invalid intent.")
+            raise TypeError("Ollama returned an invalid intent.")
 
         return data

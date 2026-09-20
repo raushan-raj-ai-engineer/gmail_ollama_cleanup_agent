@@ -16,7 +16,7 @@ class Settings:
     max_messages_per_run: int
 
     @classmethod
-    def from_env(cls) -> "Settings":
+    def from_env(cls) -> Settings:
         load_dotenv()
         return cls(
             ollama_base_url=os.getenv(

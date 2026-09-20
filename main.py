@@ -1,5 +1,6 @@
 from agent.gmail_agent import GmailCleanupAgent
 
+
 def main() -> None:
     agent = GmailCleanupAgent()
     print("Gmail + Ollama Cleanup Agent")
@@ -15,8 +16,9 @@ def main() -> None:
         try:
             result = agent.handle(request)
             print("\n" + result + "\n")
-        except Exception as exc:
+        except (ValueError, TypeError, FileNotFoundError) as exc:
             print(f"\nERROR: {exc}\n")
+
 
 if __name__ == "__main__":
     main()
